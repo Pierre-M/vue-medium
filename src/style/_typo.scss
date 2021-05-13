@@ -1,0 +1,48 @@
+$CONTENT_FONT_SANS_SERIF_FALLBACK: "Georgia,Cambria", "Times New Roman", "Times", "serif";
+$CONTENT_FONT_SERIF_FALLBACK: "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", "Geneva", "Arial", "sans-serif";
+
+$TYPO_CONFIGURATION_MAP: (
+  headTitle: (
+    font-family: 'medium-content-title-font',
+    font-weight: 400,
+    font-size: 42px,
+    color: var(--content-main-color),
+    line-height:  1.25
+  ),
+  headSubtitle: (
+    font-family: 'medium-content-sans-serif-font',
+    font-weight: 300,
+    font-size: 28px,
+    color: var(--content-medium-color),
+    line-height:  1.22
+  ),
+  title: (
+    font-family: 'medium-content-sans-serif-font',
+    font-weight: 700,
+    font-size: 34px,
+    color: var(--content-main-color),
+    line-height:  1.15
+  ),
+  subtitle: (
+    font-family: 'medium-content-sans-serif-font',
+    font-weight: 700,
+    font-size: 26px,
+    color: var(--content-main-color),
+    line-height:  1.22
+  ),
+  text: (
+    font-family: 'medium-content-serif-font',
+    font-weight: 400,
+    font-size: 21px,
+    color: var(--content-main-color),
+    line-height:  1.58
+  ),
+);
+
+@mixin typo($type) {
+  $config: map-get($TYPO_CONFIGURATION_MAP, $type);
+
+  @each $attribute, $value in $config {
+    #{$attribute}: #{$value}
+  }
+}

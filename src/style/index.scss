@@ -1,0 +1,96 @@
+@import './typo';
+@import './font-faces';
+@import './colors';
+@import './reset';
+
+.content {
+  h1 {
+    position: relative;
+    @include typo(headTitle);
+
+    + p {
+      margin-top: 10px;
+    }
+  }
+
+  h2 {
+    margin: 5px 0 22px;
+    @include typo(headSubtitle);
+  }
+
+  h3 {
+    margin-top: 56px;
+    @include typo(title);
+
+    + p {
+      margin-top: 8px;
+    }
+  }
+
+  h4 {
+    margin-top: 31px;
+    @include typo(subtitle);
+
+    + p {
+      margin-top: 6px;
+    }
+  }
+
+  p,ul {
+    margin-top: 29px;
+    @include typo(text);
+  }
+
+  ul {
+    padding-left: 5px;
+  }
+
+  li {
+    margin-top: 14px;
+
+    &::before {
+      content: '\2022';
+      font-size: 16px;
+      padding-right: 15px;
+    }
+
+    p {
+      display: inline-block;
+      margin: 0;
+    }
+  }
+
+  strong {
+    font-weight: 700;
+  }
+
+  em {
+    font-style: italic;
+  }
+
+  a {
+    &,
+    &:focus,
+    &:visited,
+    &:hover,
+    &:active {
+      color: inherit;
+      text-decoration: underline;
+    }
+  }
+
+  .is-empty {
+    position: relative;
+
+    &::before {
+      content: attr(data-placeholder);
+      position: absolute;
+      cursor: text;
+      color: var(--content-high-color);
+    }
+  }
+}
+
+.ProseMirror:focus {
+  outline: none;
+}
